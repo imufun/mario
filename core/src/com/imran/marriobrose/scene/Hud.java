@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.imran.marriobrose.MarioBrose;
@@ -15,7 +16,7 @@ import com.imran.marriobrose.MarioBrose;
 /**
  * Created by Imran on 6/22/2016.
  */
-public class Hud {
+public class Hud implements Disposable{
 
     public Stage mstage;
     private Viewport mViewport;
@@ -63,5 +64,10 @@ public class Hud {
         table.add(countdownlabel).expandX();
 
         mstage.addActor(table);
+    }
+
+    @Override
+    public void dispose() {
+
     }
 }
